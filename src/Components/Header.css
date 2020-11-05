@@ -1,0 +1,35 @@
+.dropdown{
+    display: inline-flex;
+    
+}
+.dropdown img{
+    margin-left: -3px;
+}
+.userDetails{
+    display: flex;
+    flex-direction: column !important;
+}
+.userDetails p{
+    margin-top: -1px;
+    margin-bottom: 4px;
+    font-size: smaller;
+}
+.nav1 a{
+    color: #6c757d;
+    font-size: medium;
+}
+.nav1 a:hover{
+    color: black;
+    
+}
+.navbar1{
+    background-color:#111111;
+    /*height: 113px;*/
+}
+.toggler{
+    background-color: aliceblue !important;
+}
+.brandLogo{
+    margin-left: -30px;
+}
+

@@ -1,0 +1,52 @@
+.Media1{
+    font-family: 'Merriweather', serif;
+    display: flex;
+    float: left;
+    flex-direction: column;
+    justify-content: right;
+    
+    padding: 10px 0 0 10px;
+}
+.Media1 h4{
+    font-size: 1.2em;
+    
+}
+.Media1 h6{
+    font-size: 0.8em;
+    margin-top: -1px;
+    
+}
+.authorDetails{
+    display: inline-flex !important;
+    padding-bottom: 5px;
+
+}
+.authorDetails h6{
+    font-size: 0.8em;
+    padding-top: 3px;
+    padding-left: 8px;
+}
+.image{
+    display: inline-flex !important;
+}
+.mainDiv{
+    margin-top: 10px;
+    padding: 10px 0 0 10px;
+    display: inline-flex
+}
+@media screen and (max-width: 500px)
+{
+    .Media1 h4{
+        font-size: .9em;
+        
+    }
+    .Media1 p{
+        font-size: 0.8em;
+    }
+    .Media1 h6{
+        font-size: 0.7em;
+    }
+    .mainDiv{
+        display: block;
+    }
+}

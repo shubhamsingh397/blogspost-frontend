@@ -1,0 +1,87 @@
+import React from 'react';
+import { Nav, Navbar, NavDropdown} from 'react-bootstrap';
+import { Link } from "react-router-dom";
+import styled from 'styled-components';
+import logo from './default.svg';
+import img1 from '../assets/DSC_0291.JPG';
+//import Search from './Search';
+const Styles = styled.div`
+  .navbar { background-color: white; }
+  a, .navbar-nav, .navbar-light .nav-link {
+    color: black;
+    &:hover { color: dark; }
+  }
+  .nav-item{
+    padding-left:10px;
+    padding-right:10px;
+    hover:#282d32;
+  }
+  .navbar-brand {
+    font-size: 1.4em;
+    color: #9FFFCB;
+    &:hover { color: white; }
+  }
+  .navbar-collapse collapse { 
+    border-color: lightgreen; 
+} 
+  .dropdown-item{
+    color:black;
+    hover:#282d32;
+  }
+  .form-center {
+    position: absolute !important;
+    left: 25%;
+    right: 25%;
+  }
+  .profilePic{
+    border-radius : 50%
+  }
+`;
+
+
+function Header() {
+    return (
+      <div>
+        <Styles>
+    <Navbar className="container-lg" >
+      
+          <Navbar.Brand href="/"><img src={logo} height="90px" width="80px"/></Navbar.Brand>
+
+          <Navbar.Toggle aria-controls="basic-navbar-nav " className="float-right"/>
+      <Navbar.Collapse id="basic-navbar-nav">
+          <Nav.Item><Nav.Link to="/gadgets">Gadgets</Nav.Link></Nav.Item> 
+          <Nav.Item><Nav.Link to="/technology">Technology</Nav.Link></Nav.Item> 
+          <Nav.Item><Nav.Link to="/news">News</Nav.Link></Nav.Item>
+          
+       
+      
+      
+        <Nav className="ml-md-auto">
+        <NavDropdown title={
+                    <div className="pull-left">
+                       <img src={img1} className="img-fluid profilePic" height="32px"width="40px"></img>
+                    </div>
+                 }> 
+          <ul class="dropdown-menu" role="menu" aria-labelledby="imageDropdown">
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Menu item 1</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Menu item 2</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Menu item 3</a></li>
+        <li role="presentation" class="divider"></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Menu item 4</a></li>
+      </ul>
+				</NavDropdown>
+      </Nav>
+      </Navbar.Collapse>
+      <hr/>
+    </Navbar>
+   
+  </Styles>
+ 
+
+</div>
+
+    );
+}
+
+export default Header;
+
