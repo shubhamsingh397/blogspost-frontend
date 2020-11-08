@@ -22,8 +22,8 @@ const Header1 = (props) => {
     }
     return (
         
-        <div className='container-fluid navbar1' >
-        <Navbar expand="md"className="container-fluid navbar2" sticky="top"> 
+        <div className='container-fluid navbar1 sticky-top' >
+        <Navbar expand="md"className="container-fluid navbar2" > 
             <NavbarBrand onClick={()=>history.push("/homepage")} className="brandLogo">
                 <img src={logo} height="100px" width="160px" alt="brandLogo"/>
             </NavbarBrand>
@@ -33,9 +33,14 @@ const Header1 = (props) => {
                 <Nav.Item><Link className="ml-3 text-white" to="/technology">Technology</Link></Nav.Item> 
                 <Nav.Item ><Link className="ml-3 text-white"to="/news">Programming</Link></Nav.Item>
                 <Nav className="ml-auto nav1">
-                    <Nav.Link className="text-white ml-3 mt-1" href="/search">Search</Nav.Link>
-                    <Nav.Link className="text-white ml-3 mt-1 mr-2"  href="/write">Write</Nav.Link>
-                   {props.isUserLoggedIn ? <NavDropdown alignRight title={
+                    <Nav.Link className="searchBar ml-3">
+                         <input placeholder='Search...' className='js-search searchText' type="text"/>
+                         <i className="fas fa-search fa-lg icon"></i>
+                     </Nav.Link>
+                     
+                    
+                    <Nav.Link className="text-white ml-3 mt-1 "  href="/write">Write</Nav.Link>
+                   {props.isUserLoggedIn===true ? <NavDropdown alignRight title={
                          props.isUserLoggedIn ? <span className="ml-3">
                                 <img src={img1} className="profilePic" height="32px"width="40px" alt="username"></img>
                             </span> : <span><i className="fa fa-user" aria-hidden="true"></i></span>}id="basic-nav-dropdown">

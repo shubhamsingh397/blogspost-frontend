@@ -6,12 +6,26 @@ import HomePage from './Components/HomePage';
 import Header1 from './Components/Header1';
 import { useState } from 'react';
 import AuthService from './Components/Authtentication/AuthService';
+import { useEffect } from 'react';
+import Footer from './Components/Footer';
 
 function App(props) {
   const history = useHistory();
-  const [isUserLoggedIn, setIsUserLoggedIn] = useState();
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
   const [user,setUser] = useState([]);
-  console.log(isUserLoggedIn);
+  
+useEffect(()=>{
+    var loggedIn = localStorage.getItem('isUserLoggedIn')
+    if(loggedIn)
+    {
+      
+      setIsUserLoggedIn(true)
+      var user1 = localStorage.getItem('user')
+      setUser(JSON.parse(user1))
+      
+    }
+  },[])
+ 
 
    const handleLogin=(data)=>{
 
@@ -19,12 +33,17 @@ function App(props) {
    { 
      setIsUserLoggedIn(true);
      var userName = sessionStorage.getItem('authenticatedUser');
-     
+     console.log(userName)
      AuthService.getUser(userName)
      .then((response)=>{
-       //console.log(response.data)
-      setUser(response.data);
-     })
+       console.log(response.data)
+       var user1 = response.data;
+      localStorage.setItem('isUserLoggedIn', isUserLoggedIn)
+      localStorage.setItem('user', JSON.stringify(user1))
+      
+      setUser(user1);
+     }).catch((error)=>{
+      console.log(error)})
      
    }
   }
@@ -32,7 +51,10 @@ function App(props) {
    const handleLogout = () =>{
      console.log('handleLogout')
      setIsUserLoggedIn(false);
-     setUser(null);
+     setUser([]);
+     localStorage.removeItem('isUserLoggedIn')
+     localStorage.removeItem('user')
+
    }
 
    const handleRegister = (data) =>{
@@ -40,9 +62,10 @@ function App(props) {
       setUser(data);
    }
   return (
-    <div className="App">
+    <div className="page-container" >
     
      <Router  history={history}>
+       <div className="App">
             <Header1 isUserLoggedIn={isUserLoggedIn} user={user} handleLogout={handleLogout}></Header1>
             <>
             <Switch>
@@ -55,8 +78,11 @@ function App(props) {
             <Route component={ErrorComponent}/>
             </Switch>
             </>
+           </div>
+           <Footer></Footer> 
         </Router>
     </div>
+    
   );
 }
 

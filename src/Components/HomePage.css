@@ -1,11 +1,20 @@
+.mainContainer{
+    display: grid;
+    grid-template-columns: 65% 1fr;
+}
+
+
 .Media1{
     font-family: 'Merriweather', serif;
     display: flex;
     float: left;
     flex-direction: column;
     justify-content: right;
-    
+    margin-left: 20px !important;
+
     padding: 10px 0 0 10px;
+   
+    margin-right: 35px;
 }
 .Media1 h4{
     font-size: 1.2em;
@@ -26,15 +35,19 @@
     padding-top: 3px;
     padding-left: 8px;
 }
-.image{
-    display: inline-flex !important;
+.postImage{
+    margin-right: 60px;
+    
 }
+
 .mainDiv{
+  
     margin-top: 10px;
-    padding: 10px 0 0 10px;
-    display: inline-flex
+    padding: 10px 0 10px 0px;
+    display: inline-flex;
+    
 }
-@media screen and (max-width: 500px)
+@media screen and (max-width: 768px)
 {
     .Media1 h4{
         font-size: .9em;
@@ -49,4 +62,41 @@
     .mainDiv{
         display: block;
     }
+    .postImage{
+        margin-left: 40px;
+    }
+    .mainContainer{
+        grid-template-rows: 2;
+        grid-template-columns: 1fr;
+    }
+    .sideBarParent{
+        grid-row-start: 1;
+    
+    }
+   
+}
+.mainDiv1{
+    margin-bottom: 10px;
+}
+.sideBar{
+    padding-top: 20px;
+    position: sticky;
+    top: 130px;
+}
+.sideBarGrid{
+    
+    display: grid;
+    grid-template-rows: repeat(3,40px);
+    grid-template-columns: repeat(auto-fill,minmax(50px,120px));
+    
+    grid-gap: 8px;
+   
+  
+}
+.sideBar h4{
+    padding: 5px;
+    text-align: center;
+    font-size: small;
+    border-radius: 5%;
+    border: 1px solid #6c757d;
 }

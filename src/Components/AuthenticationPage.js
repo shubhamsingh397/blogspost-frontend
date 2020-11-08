@@ -21,7 +21,7 @@ handleRegister1(data)
 }
 render(){
     return(
-        <div className="container p-2 " id= "login" >
+        <div className="container p-2 mb-5 " id= "login" >
         <img src={image} width="410px" height="470px" id="signupImg" alt="signup"></img>
          { this.props.page === 'SignUp'? <SignUp handleRegister={this.handleRegister1}></SignUp>:<Login handleSuccessLogin={this.handleSuccessLogin}></Login>}
         </div>

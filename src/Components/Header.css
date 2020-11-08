@@ -2,6 +2,9 @@
     display: inline-flex;
     
 }
+.profilePic{
+    border-radius: 50%;
+}
 .dropdown img{
     margin-left: -3px;
 }
@@ -32,4 +35,44 @@
 .brandLogo{
     margin-left: -30px;
 }
+.searchText{
+    position: relative;
+    padding: 3px 10px 2px 15px;
+    width: 20px;
+    color: #525252;
+    
+    font-size: 16px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(to right, #FFFFFF 0%,#464747 #F9F9F9 100%);
+    transition: width 0.4s ease;
+    outline: none;
+
+    
+  }
+.searchText:hover{
+     width: 300px; 
+    }
+.searchBar i{
+
+        position: relative;
+        left: -22px;
+        color: black;
+        
+} 
+.searchBar{
+    margin-right: -23px;
+    margin-top: 3px;
+}
+.searchBar i:hover + .searchText{
+    transition: width 0.4s ease;
+    width: 300px;
+} 
+
+
+
+ 
+
 

@@ -27,16 +27,16 @@ const Login = (props) => {
             {
                 AuthService.authenticateUser(values.username,values.password)
                 .then((response)=>{AuthService.registerSuccessfulLogin(values.username,response.data.token);
-                    console.log(response)
+                console.log(response)
                 props.handleSuccessLogin(response);
                 history.push('/homepage')
                 
                 })
-                .catch(()=>{
+                .catch((error)=>{
                     setLoginFailed(true);
                     
                     resetForm();
-                    console.log('error')})
+                    console.log(error)})
             }}>
             {props =>(
                 
