@@ -1,6 +1,7 @@
 import React from 'react';
 import Blogs from './Blogs';
 import SideBar from './Sidebar';
+import Trending from './Trending';
 import './HomePage.css';
 
 
@@ -9,8 +10,10 @@ import './HomePage.css';
 
     return (
       <div className="mainContainer">
-      <Blogs></Blogs>
-      <SideBar></SideBar>
+        <Trending></Trending>
+        <SideBar></SideBar>
+        <Blogs></Blogs>
+        
       </div>
     )
 

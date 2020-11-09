@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import './HomePage.css';
 
 const SideBar = () => {
@@ -9,7 +10,7 @@ const SideBar = () => {
             <h3 >Discover what you like</h3>
             
                 <div className=" sideBarGrid">
-                    <h4>Mobiles</h4>
+                    <Link to="/categories"><h4>Mobiles</h4></Link>
                     <h4>Self</h4>
                     <h4>Relationship</h4>
                     <h4>Relationship</h4>

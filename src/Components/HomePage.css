@@ -1,8 +1,52 @@
 .mainContainer{
     display: grid;
+    grid-template-rows: 35% 1fr;
     grid-template-columns: 65% 1fr;
 }
+.trendingMain{
+    grid-column: 1/-1;
+    border-bottom: .5px solid  #a1a9b1;
+    margin-bottom: 15px !important;
+}
+.trendingMain > h6{
+    padding: 15px 0 3px 0;
+    margin-left: 105px;
+    
+}
+.trending{
+    font-family: 'Merriweather', serif;
+    
+    /*padding: 5px 0px 15px 50px ;
+   /* display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(auto-fill,minmax(100px,350px )); */
+    
+    display: inline-flex;
+    flex-flow: wrap !important;
+    margin-left: 70px !important;
+    justify-content: baseline;
 
+    
+    
+    
+}
+.trendingMedia{
+    max-width: 370px;
+    padding: 5px 20px 5px 20px;
+    
+    
+}
+
+.trendingMedia h4{
+    font-size: 18px;
+    font-weight: bolder;
+}
+.trendingMedia p{
+    font-size: 12px;
+}
+.trendingMedia h6{
+    font-size: 10px;
+}
 
 .Media1{
     font-family: 'Merriweather', serif;
@@ -47,16 +91,31 @@
     display: inline-flex;
     
 }
+@media screen and (max-width: 850px)
+{
+    .trendingMedia h4{
+        font-size: .8em;
+        
+    }
+    .trendingMedia p{
+        font-size: 0.9em;
+    }
+    .trendingMedia h6{
+        font-size: 0.8em;
+    }
+
+}
+
 @media screen and (max-width: 768px)
 {
-    .Media1 h4{
+    .Media1 h4,.trendingMedia h4{
         font-size: .9em;
         
     }
-    .Media1 p{
+    .Media1 p, .trendingMedia p{
         font-size: 0.8em;
     }
-    .Media1 h6{
+    .Media1 h6, .trendingMedia h6{
         font-size: 0.7em;
     }
     .mainDiv{
@@ -65,18 +124,37 @@
     .postImage{
         margin-left: 40px;
     }
+    .trending{
+        flex-wrap: wrap;
+        margin-left: 0px !important;
+    }
     .mainContainer{
-        grid-template-rows: 2;
+        grid-template-rows: repeat(3,auto);
         grid-template-columns: 1fr;
+       
+    }
+    .trendingMain{
+        
+        grid-row: span 1;
+    }
+    .mainDiv1{
+        grid-row-start: 3;
+        grid-column-start: 1;
+        
     }
     .sideBarParent{
-        grid-row-start: 1;
-    
+        
+    }
+    .sideBar{
+        position: unset !important;
+        top: unset !important;
+        margin-left: 40px !important;
     }
    
 }
 .mainDiv1{
     margin-bottom: 10px;
+    grid-row-start: 2;
 }
 .sideBar{
     padding-top: 20px;
