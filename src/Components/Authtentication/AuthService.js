@@ -31,12 +31,14 @@ class AuthService {
     addUser(values)
     {
         console.log(values);
-        return axios.post('http://localhost:8081/add_user', values);
+       // return axios.post('http://localhost:8081/add_user', values);
+       return axios.post('https://blogspost1.herokuapp.com/add_user', values);
     }
 
     authenticateUser(username,password)
     {
-        return axios.post('http://localhost:8081/authenticate',{
+        //return axios.post('http://localhost:8081/authenticate',{
+            return axios.post('https://blogspost1.herokuapp.com/authenticate',{
             username: username,
             password: password
         })
@@ -78,12 +80,14 @@ class AuthService {
     }
     retreiveAllBlogs(){
         console.log(this.token2)
-        return axios.get('http://localhost:8081/post',{headers:{Authorization: `${this.token2}` }})
+       // return axios.get('http://localhost:8081/post',{headers:{Authorization: `${this.token2}` }})
+       return axios.get('https://blogspost1.herokuapp.com/post',{headers:{Authorization: `${this.token2}` }})
     }
 
     getUser(userName)
     {
-        return axios.get(`http://localhost:8081/user/${userName}`,{headers:{Authorization: `${this.token2}` }})
+       // return axios.get(`http://localhost:8081/user/${userName}`,{headers:{Authorization: `${this.token2}` }})
+       return axios.get(`https://blogspost1.herokuapp.com/user/${userName}`,{headers:{Authorization: `${this.token2}` }})
     }
 }
 export default new AuthService();
