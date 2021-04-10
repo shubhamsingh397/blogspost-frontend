@@ -11,12 +11,12 @@ import Footer from './Components/Footer';
 
 function App(props) {
   const history = useHistory();
-  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState();
   const [user,setUser] = useState([]);
   
 useEffect(()=>{
     var loggedIn = localStorage.getItem('isUserLoggedIn')
-    if(loggedIn)
+    if(loggedIn===true)
     {
       
       setIsUserLoggedIn(true)
@@ -38,8 +38,8 @@ useEffect(()=>{
      .then((response)=>{
        console.log(response.data)
        var user1 = response.data;
-      localStorage.setItem('isUserLoggedIn', isUserLoggedIn)
-      localStorage.setItem('user', JSON.stringify(user1))
+      localStorage.setItem('isUserLoggedIn', true);
+      localStorage.setItem('user', JSON.stringify(user1));
       
       setUser(user1);
      }).catch((error)=>{
